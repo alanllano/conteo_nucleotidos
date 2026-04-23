@@ -29,7 +29,10 @@ def parse_k(k_input: str, max_length: int) -> tuple[int | None, str | None]:
         return None, "El valor de k debe ser un número entero positivo."
 
     if k_value > max_length:
-        return None, "El valor de k no puede ser mayor que la longitud de la secuencia de ADN."
+        return (
+            None,
+            "El valor de k no puede ser mayor que la longitud de la secuencia de ADN.",
+        )
 
     return k_value, None
 
