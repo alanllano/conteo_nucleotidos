@@ -63,7 +63,59 @@ Mostrar resultados\
 FIN
 
 ------------------------------------------------------------------------
+Inicio
 
+  Solicitar la secuencia de ADN
+  Leer dna_sequence
+  Convertir dna_sequence a mayúsculas
+
+  Solicitar el valor de k
+  Leer k_input
+
+  Si dna_sequence está vacía entonces
+      Mostrar error
+      Terminar
+  FinSi
+
+  Definir valid_bases = "ACGTN"
+  Definir invalid_characters = falso
+
+  Para cada base en dna_sequence hacer
+      Si base no pertenece a valid_bases entonces
+          invalid_characters = verdadero
+          Salir del ciclo
+      FinSi
+  FinPara
+
+  Si invalid_characters es verdadero entonces
+      Mostrar error
+      Terminar
+  FinSi
+
+  Intentar convertir k_input a entero → k
+  Si falla entonces
+      Mostrar error
+      Terminar
+  FinSi
+
+  Si k <= 0 entonces
+      Mostrar error
+      Terminar
+  FinSi
+
+  Si k > longitud(dna_sequence) entonces
+      Mostrar error
+      Terminar
+  FinSi
+
+  Mostrar "K-mers:"
+
+  Para i desde 0 hasta longitud(dna_sequence) - k hacer
+      current_kmer = subcadena(dna_sequence, i, i + k)
+      Mostrar current_kmer
+  FinPara
+
+Fin
 ## 🔁 Diagrama de Flujo (Mermaid)
 
 ``` mermaid
